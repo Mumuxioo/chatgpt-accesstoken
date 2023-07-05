@@ -38,9 +38,9 @@ func (o OError) Error() string {
 		errs = append(errs, fmt.Sprintf("status code: %d", o.Err.StatusCode))
 	}
 
-	if o.Err.Details != "" {
-		errs = append(errs, fmt.Sprintf("details: %s", o.Err.Details))
-	}
+	//if o.Err.Details != "" {
+	//	errs = append(errs, fmt.Sprintf("details: %s", o.Err.Details))
+	//}
 
 	if o.Err.Error != nil {
 		errs = append(errs, fmt.Sprintf("err: %s", o.Err.Error.Error()))
