@@ -1,0 +1,12 @@
+### 健康检查
+GET {{URL}}/health
+Content-Type: application/json
+
+### 获取AccessToken
+POST {{URL}}/auth
+Content-Type: application/json
+
+{
+  "email": "nterfaiscubrappmun@mail.com",
+  "password": "FmwwZc0WPX"
+}

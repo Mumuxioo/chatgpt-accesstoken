@@ -1,0 +1,36 @@
+builds:
+  - id: accesstokend
+    goos:
+      - linux
+      - darwin
+      - windows
+    goarch:
+      - amd64
+      - arm64
+    ignore:
+      - goos: windows
+        goarch: arm64
+    main: main.go
+    env:
+      - GO111MODULE=on
+      - CGO_ENABLED=0
+      - CC=gcc
+      - PKG_CONFIG=$GOPATH/bin/pkg-config
+      - MACOSX_DEPLOYMENT_TARGET=10.11
+    binary: accesstokend
+dockers:
+  - goos: linux
+    goarch: amd64
+    ids:
+      - accesstokend
+    image_templates:
+      - "askaigo/chatgpt-accesstoken:{{ .Tag }}-{{.ShortCommit}}"
+    dockerfile: Dockerfile
+    use: buildx
+    extra_files:
+      - main.go
+      - go.sum
+      - go.mod
+      - README.md
+      - LICENSE
+    skip_push: false
