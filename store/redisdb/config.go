@@ -23,7 +23,7 @@ import (
 
 type Config struct {
 	Address      []string      `envconfig:"REDIS_ADDRESS"        default:"127.0.0.1:6379"`
-	Password     string        `envconfig:"REDIS_PASSWORD"       default:"Real668@"`
+	Password     string        `envconfig:"REDIS_PASSWORD"       default:"root"`
 	DB           int           `envconfig:"REDIS_DB"             default:"0"`
 	PoolSize     int           `envconfig:"REDIS_POOL_SIZE"      default:"20"`
 	DailTimeOut  time.Duration `envconfig:"REDIS_DAIL_TIMEOUT"   default:"3s"`
